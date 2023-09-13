@@ -6,17 +6,17 @@ A `docker-compose` project that exposes Apache Kafka on port 9092 and provides a
 
 For the instructions in this repo to work, you will need:
 
-1. A working [Docker](docker) installation
-2. [docker-compose](docker compose)
-3. The `bin/kafka` scripts on your path.
+1. [Docker](https://www.docker.com/)
+2. [docker-compose](https://docs.docker.com/compose/)
+3. The [bin/kafka](https://docs.confluent.io/kafka/operations-tools/kafka-tools.html) scripts on your path.
 
 ### Clone Repository
 
-1. Clone this repository: `git clone https://github.com/nilsjorgen/docker-kafka-kcat.git`
+1. Clone this repository: `git clone https://github.com/njmittet/docker-kafka-kcat.git`
 2. `cd` to the cloned folder.
 3. Run `source ./environment.txt`
-4. Start Kafka cluster by executing the `docker-compose.yaml` file: `'docker-compose up -d`
-5. Verify that Kcat is  working:
+4. Start he Kafka cluster by executing the `docker-compose.yaml` file: `'docker-compose up -d`
+5. Verify that `kcat` is  working:
 
 ```sh
 $ kcat -L
@@ -26,12 +26,6 @@ Metadata for all topics (from broker 1: kafka:29092/1):
   broker 1 at kafka:29092 (controller)
  0 topics:
 ```
-
-### Kafka Scripts
-
-1. Download Kafka: [https://www.apache.org/dyn/closer.cgi?path=/kafka/3.1.0/kafka_2.13-3.1.0.tgz](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.1.0/kafka_2.13-3.1.0.tgz)
-2. Extract Kafka with `tar -xvzf kafka_2.13-3.1.0.tgz`
-3. Preferably, put `kafka_2.13-3.1.0/bin` on your `$path`.
 
 ## Usage
 
@@ -54,7 +48,7 @@ Kcat options:
 
 Kcat does mode auto-selecting, so using -P or -C to override is actually optional.
 
-### Sending
+### Sending Messages
 
 Basic send and receive of a text message:
 
@@ -65,7 +59,7 @@ My Second Message # Enter
 # Ctrl-D to finish
 ```
 
-### Receiving
+### Receiving Messages
 
 Receive all messages on a topic and finish:
 
